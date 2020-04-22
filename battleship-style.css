@@ -1,6 +1,7 @@
 body {
-    background-image: url(./battleship-assets/images/ocean.png);
+    background:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./battleship-assets/images/ocean.png);
     background-size: cover;
+    color: white;
 }
 .container {
     height: 100%;
@@ -64,3 +65,33 @@ input[type=text] {
 }
 
 /* Setup page */
+table, tr, td {
+    width: 90%;
+    margin: auto;
+    margin-top: 2em;
+    color: white;
+    font-size: large;
+    font-weight: 700;
+    border-collapse: collapse;
+}
+td {
+    width: 15px;
+    height: 45px;
+    padding: 0;    
+    border: 2px solid white;
+}
+::selection {
+    background: none;
+  }
+::-moz-selection {
+    background: none; 
+}
+.numeration-data, .numeration-row td {
+    border: none !important;
+}
+.fas, .far {
+    margin-top: 1em;
+    color: white;
+    font-size: 1em;
+    margin-left: 5px;
+}

@@ -7,6 +7,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
     <link rel="stylesheet" href="battleship-style.css">
     <script src="battleship-script.js"></script>
@@ -14,11 +17,340 @@
 </head>
 <body>
 
-    <div class="container">
-        <div class="row wrapper fadeInDown text-center">
-            <div class="offset-sm-3 col-sm-6 welcome-form">
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="offset-sm-1 col-lg-5 col-sm-10">
+                <table>
+                    <tr class="numeration-row">
+                        <td>&nbsp;</td>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>C</td>
+                        <td>D</td>
+                        <td>E</td>
+                        <td>F</td>
+                        <td>G</td>
+                        <td>H</td>
+                        <td>I</td>
+                        <td>J</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">0</td>
+                        <td id="1A0" onmousedown="startCounting('1A0')" onmouseup="stopCounting('1A0')">&nbsp;</td>
+                        <td id="1B0" onmousedown="startCounting('1B0')" onmouseup="stopCounting('1B0')">&nbsp;</td>
+                        <td id="1C0" onmousedown="startCounting('1C0')" onmouseup="stopCounting('1C0')">&nbsp;</td>
+                        <td id="1D0" onmousedown="startCounting('1D0')" onmouseup="stopCounting('1D0')">&nbsp;</td>
+                        <td id="1E0" onmousedown="startCounting('1E0')" onmouseup="stopCounting('1E0')">&nbsp;</td>
+                        <td id="1F0" onmousedown="startCounting('1F0')" onmouseup="stopCounting('1F0')">&nbsp;</td>
+                        <td id="1G0" onmousedown="startCounting('1G0')" onmouseup="stopCounting('1G0')">&nbsp;</td>
+                        <td id="1H0" onmousedown="startCounting('1H0')" onmouseup="stopCounting('1H0')">&nbsp;</td>
+                        <td id="1I0" onmousedown="startCounting('1I0')" onmouseup="stopCounting('1I0')">&nbsp;</td>
+                        <td id="1J0" onmousedown="startCounting('1J0')" onmouseup="stopCounting('1J0')">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">1</td>
+                        <td id="1A1" onmousedown="startCounting('1A1')" onmouseup="stopCounting('1A1')">&nbsp;</td>
+                        <td id="1B1" onmousedown="startCounting('1B1')" onmouseup="stopCounting('1B1')">&nbsp;</td>
+                        <td id="1C1" onmousedown="startCounting('1C1')" onmouseup="stopCounting('1C1')">&nbsp;</td>
+                        <td id="1D1" onmousedown="startCounting('1D1')" onmouseup="stopCounting('1D1')">&nbsp;</td>
+                        <td id="1E1" onmousedown="startCounting('1E1')" onmouseup="stopCounting('1E1')">&nbsp;</td>
+                        <td id="1F1" onmousedown="startCounting('1F1')" onmouseup="stopCounting('1F1')">&nbsp;</td>
+                        <td id="1G1" onmousedown="startCounting('1G1')" onmouseup="stopCounting('1G1')">&nbsp;</td>
+                        <td id="1H1" onmousedown="startCounting('1H1')" onmouseup="stopCounting('1H1')">&nbsp;</td>
+                        <td id="1I1" onmousedown="startCounting('1I1')" onmouseup="stopCounting('1I1')">&nbsp;</td>
+                        <td id="1J1" onmousedown="startCounting('1J1')" onmouseup="stopCounting('1J1')">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">2</td>
+                        <td id="1A2" onmousedown="startCounting('1A2')" onmouseup="stopCounting('1A2')">&nbsp;</td>
+                        <td id="1B2" onmousedown="startCounting('1B2')" onmouseup="stopCounting('1B2')">&nbsp;</td>
+                        <td id="1C2" onmousedown="startCounting('1C2')" onmouseup="stopCounting('1C2')">&nbsp;</td>
+                        <td id="1D2" onmousedown="startCounting('1D2')" onmouseup="stopCounting('1D2')">&nbsp;</td>
+                        <td id="1E2" onmousedown="startCounting('1E2')" onmouseup="stopCounting('1E2')">&nbsp;</td>
+                        <td id="1F2" onmousedown="startCounting('1F2')" onmouseup="stopCounting('1F2')">&nbsp;</td>
+                        <td id="1G2" onmousedown="startCounting('1G2')" onmouseup="stopCounting('1G2')">&nbsp;</td>
+                        <td id="1H2" onmousedown="startCounting('1H2')" onmouseup="stopCounting('1H2')">&nbsp;</td>
+                        <td id="1I2" onmousedown="startCounting('1I2')" onmouseup="stopCounting('1I2')">&nbsp;</td>
+                        <td id="1J2" onmousedown="startCounting('1J2')" onmouseup="stopCounting('1J2')">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">3</td>
+                        <td id="1A3" onmousedown="startCounting('1A3')" onmouseup="stopCounting('1A3')">&nbsp;</td>
+                        <td id="1B3" onmousedown="startCounting('1B3')" onmouseup="stopCounting('1B3')">&nbsp;</td>
+                        <td id="1C3" onmousedown="startCounting('1C3')" onmouseup="stopCounting('1C3')">&nbsp;</td>
+                        <td id="1D3" onmousedown="startCounting('1D3')" onmouseup="stopCounting('1D3')">&nbsp;</td>
+                        <td id="1E3" onmousedown="startCounting('1E3')" onmouseup="stopCounting('1E3')">&nbsp;</td>
+                        <td id="1F3" onmousedown="startCounting('1F3')" onmouseup="stopCounting('1F3')">&nbsp;</td>
+                        <td id="1G3" onmousedown="startCounting('1G3')" onmouseup="stopCounting('1G3')">&nbsp;</td>
+                        <td id="1H3" onmousedown="startCounting('1H3')" onmouseup="stopCounting('1H3')">&nbsp;</td>
+                        <td id="1I3" onmousedown="startCounting('1I3')" onmouseup="stopCounting('1I3')">&nbsp;</td>
+                        <td id="1J3" onmousedown="startCounting('1J3')" onmouseup="stopCounting('1J3')">&nbsp;</td>
+                    <tr>
+                        <td class="numeration-data">4</td>
+                        <td id="1A4" onmousedown="startCounting('1A4')" onmouseup="stopCounting('1A4')">&nbsp;</td>
+                        <td id="1B4" onmousedown="startCounting('1B4')" onmouseup="stopCounting('1B4')">&nbsp;</td>
+                        <td id="1C4" onmousedown="startCounting('1C4')" onmouseup="stopCounting('1C4')">&nbsp;</td>
+                        <td id="1D4" onmousedown="startCounting('1D4')" onmouseup="stopCounting('1D4')">&nbsp;</td>
+                        <td id="1E4" onmousedown="startCounting('1E4')" onmouseup="stopCounting('1E4')">&nbsp;</td>
+                        <td id="1F4" onmousedown="startCounting('1F4')" onmouseup="stopCounting('1F4')">&nbsp;</td>
+                        <td id="1G4" onmousedown="startCounting('1G4')" onmouseup="stopCounting('1G4')">&nbsp;</td>
+                        <td id="1H4" onmousedown="startCounting('1H4')" onmouseup="stopCounting('1H4')">&nbsp;</td>
+                        <td id="1I4" onmousedown="startCounting('1I4')" onmouseup="stopCounting('1I4')">&nbsp;</td>
+                        <td id="1J4" onmousedown="startCounting('1J4')" onmouseup="stopCounting('1J4')">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">5</td>
+                        <td id="1A5" onmousedown="startCounting('1A5')" onmouseup="stopCounting('1A5')">&nbsp;</td>
+                        <td id="1B5" onmousedown="startCounting('1B5')" onmouseup="stopCounting('1B5')">&nbsp;</td>
+                        <td id="1C5" onmousedown="startCounting('1C5')" onmouseup="stopCounting('1C5')">&nbsp;</td>
+                        <td id="1D5" onmousedown="startCounting('1D5')" onmouseup="stopCounting('1D5')">&nbsp;</td>
+                        <td id="1E5" onmousedown="startCounting('1E5')" onmouseup="stopCounting('1E5')">&nbsp;</td>
+                        <td id="1F5" onmousedown="startCounting('1F5')" onmouseup="stopCounting('1F5')">&nbsp;</td>
+                        <td id="1G5" onmousedown="startCounting('1G5')" onmouseup="stopCounting('1G5')">&nbsp;</td>
+                        <td id="1H5" onmousedown="startCounting('1H5')" onmouseup="stopCounting('1H5')">&nbsp;</td>
+                        <td id="1I5" onmousedown="startCounting('1I5')" onmouseup="stopCounting('1I5')">&nbsp;</td>
+                        <td id="1J5" onmousedown="startCounting('1J5')" onmouseup="stopCounting('1J5')">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">6</td>
+                        <td id="1A6" onmousedown="startCounting('1A6')" onmouseup="stopCounting('1A6')">&nbsp;</td>
+                        <td id="1B6" onmousedown="startCounting('1B6')" onmouseup="stopCounting('1B6')">&nbsp;</td>
+                        <td id="1C6" onmousedown="startCounting('1C6')" onmouseup="stopCounting('1C6')">&nbsp;</td>
+                        <td id="1D6" onmousedown="startCounting('1D6')" onmouseup="stopCounting('1D6')">&nbsp;</td>
+                        <td id="1E6" onmousedown="startCounting('1E6')" onmouseup="stopCounting('1E6')">&nbsp;</td>
+                        <td id="1F6" onmousedown="startCounting('1F6')" onmouseup="stopCounting('1F6')">&nbsp;</td>
+                        <td id="1G6" onmousedown="startCounting('1G6')" onmouseup="stopCounting('1G6')">&nbsp;</td>
+                        <td id="1H6" onmousedown="startCounting('1H6')" onmouseup="stopCounting('1H6')">&nbsp;</td>
+                        <td id="1I6" onmousedown="startCounting('1I6')" onmouseup="stopCounting('1I6')">&nbsp;</td>
+                        <td id="1J6" onmousedown="startCounting('1J6')" onmouseup="stopCounting('1J6')">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">7</td>
+                        <td id="1A7" onmousedown="startCounting('1A7')" onmouseup="stopCounting('1A7')">&nbsp;</td>
+                        <td id="1B7" onmousedown="startCounting('1B7')" onmouseup="stopCounting('1B7')">&nbsp;</td>
+                        <td id="1C7" onmousedown="startCounting('1C7')" onmouseup="stopCounting('1C7')">&nbsp;</td>
+                        <td id="1D7" onmousedown="startCounting('1D7')" onmouseup="stopCounting('1D7')">&nbsp;</td>
+                        <td id="1E7" onmousedown="startCounting('1E7')" onmouseup="stopCounting('1E7')">&nbsp;</td>
+                        <td id="1F7" onmousedown="startCounting('1F7')" onmouseup="stopCounting('1F7')">&nbsp;</td>
+                        <td id="1G7" onmousedown="startCounting('1G7')" onmouseup="stopCounting('1G7')">&nbsp;</td>
+                        <td id="1H7" onmousedown="startCounting('1H7')" onmouseup="stopCounting('1H7')">&nbsp;</td>
+                        <td id="1I7" onmousedown="startCounting('1I7')" onmouseup="stopCounting('1I7')">&nbsp;</td>
+                        <td id="1J7" onmousedown="startCounting('1J7')" onmouseup="stopCounting('1J7')">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">8</td>
+                        <td id="1A8" onmousedown="startCounting('1A8')" onmouseup="stopCounting('1A8')">&nbsp;</td>
+                        <td id="1B8" onmousedown="startCounting('1B8')" onmouseup="stopCounting('1B8')">&nbsp;</td>
+                        <td id="1C8" onmousedown="startCounting('1C8')" onmouseup="stopCounting('1C8')">&nbsp;</td>
+                        <td id="1D8" onmousedown="startCounting('1D8')" onmouseup="stopCounting('1D8')">&nbsp;</td>
+                        <td id="1E8" onmousedown="startCounting('1E8')" onmouseup="stopCounting('1E8')">&nbsp;</td>
+                        <td id="1F8" onmousedown="startCounting('1F8')" onmouseup="stopCounting('1F8')">&nbsp;</td>
+                        <td id="1G8" onmousedown="startCounting('1G8')" onmouseup="stopCounting('1G8')">&nbsp;</td>
+                        <td id="1H8" onmousedown="startCounting('1H8')" onmouseup="stopCounting('1H8')">&nbsp;</td>
+                        <td id="1I8" onmousedown="startCounting('1I8')" onmouseup="stopCounting('1I8')">&nbsp;</td>
+                        <td id="1J8" onmousedown="startCounting('1J8')" onmouseup="stopCounting('1J8')">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">9</td>
+                        <td id="1A9" onmousedown="startCounting('1A9')" onmouseup="stopCounting('1A9')">&nbsp;</td>
+                        <td id="1B9" onmousedown="startCounting('1B9')" onmouseup="stopCounting('1B9')">&nbsp;</td>
+                        <td id="1C9" onmousedown="startCounting('1C9')" onmouseup="stopCounting('1C9')">&nbsp;</td>
+                        <td id="1D9" onmousedown="startCounting('1D9')" onmouseup="stopCounting('1D9')">&nbsp;</td>
+                        <td id="1E9" onmousedown="startCounting('1E9')" onmouseup="stopCounting('1E9')">&nbsp;</td>
+                        <td id="1F9" onmousedown="startCounting('1F9')" onmouseup="stopCounting('1F9')">&nbsp;</td>
+                        <td id="1G9" onmousedown="startCounting('1G9')" onmouseup="stopCounting('1G9')">&nbsp;</td>
+                        <td id="1H9" onmousedown="startCounting('1H9')" onmouseup="stopCounting('1H9')">&nbsp;</td>
+                        <td id="1I9" onmousedown="startCounting('1I9')" onmouseup="stopCounting('1I9')">&nbsp;</td>
+                        <td id="1J9" onmousedown="startCounting('1J9')" onmouseup="stopCounting('1J9')">&nbsp;</td>
+                    </tr>
+                </table>
+                
+                <div class="ship-text">
+                    <i class="fas fa-anchor"></i>
+                    Ships to add:
+                    <br/>
+                    <i class="fas fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i>
+                    <span>4 ships left</span>
+                    <br/>
+                    <i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i>
+                    <span>3 ships left</span>
+                    <br/>
+                    <i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i>
+                    <span>2 ships left</span>
+                    <br/>
+                    <i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i>
+                    <span>1 ships left</span>
+                    <br/>
+                </div>
                
             </div>
+
+            <div class="offset-sm-1 offset-lg-0 col-lg-5 col-sm-10">
+                <table>
+                    <tr class="numeration-row">
+                        <td>&nbsp;</td>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>C</td>
+                        <td>D</td>
+                        <td>E</td>
+                        <td>F</td>
+                        <td>G</td>
+                        <td>H</td>
+                        <td>I</td>
+                        <td>J</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">0</td>
+                        <td id="2A0" onmousedown="startCounting('2A0')" onmouseup="stopCounting('2A0')">&nbsp;</td>
+                        <td id="2B0" onmousedown="startCounting('2B0')" onmouseup="stopCounting('2B0')">&nbsp;</td>
+                        <td id="2C0" onmousedown="startCounting('2C0')" onmouseup="stopCounting('2C0')">&nbsp;</td>
+                        <td id="2D0" onmousedown="startCounting('2D0')" onmouseup="stopCounting('2D0')">&nbsp;</td>
+                        <td id="2E0" onmousedown="startCounting('2E0')" onmouseup="stopCounting('2E0')">&nbsp;</td>
+                        <td id="2F0" onmousedown="startCounting('2F0')" onmouseup="stopCounting('2F0')">&nbsp;</td>
+                        <td id="2G0" onmousedown="startCounting('2G0')" onmouseup="stopCounting('2G0')">&nbsp;</td>
+                        <td id="2H0" onmousedown="startCounting('2H0')" onmouseup="stopCounting('2H0')">&nbsp;</td>
+                        <td id="2I0" onmousedown="startCounting('2I0')" onmouseup="stopCounting('2I0')">&nbsp;</td>
+                        <td id="2J0" onmousedown="startCounting('2J0')" onmouseup="stopCounting('2J0')">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">1</td>
+                        <td id="2A1" onmousedown="startCounting('2A1')" onmouseup="stopCounting('2A1')">&nbsp;</td>
+                        <td id="2B1" onmousedown="startCounting('2B1')" onmouseup="stopCounting('2B1')">&nbsp;</td>
+                        <td id="2C1" onmousedown="startCounting('2C1')" onmouseup="stopCounting('2C1')">&nbsp;</td>
+                        <td id="2D1" onmousedown="startCounting('2D1')" onmouseup="stopCounting('2D1')">&nbsp;</td>
+                        <td id="2E1" onmousedown="startCounting('2E1')" onmouseup="stopCounting('2E1')">&nbsp;</td>
+                        <td id="2F1" onmousedown="startCounting('2F1')" onmouseup="stopCounting('2F1')">&nbsp;</td>
+                        <td id="2G1" onmousedown="startCounting('2G1')" onmouseup="stopCounting('2G1')">&nbsp;</td>
+                        <td id="2H1" onmousedown="startCounting('2H1')" onmouseup="stopCounting('2H1')">&nbsp;</td>
+                        <td id="2I1" onmousedown="startCounting('2I1')" onmouseup="stopCounting('2I1')">&nbsp;</td>
+                        <td id="2J1" onmousedown="startCounting('2J1')" onmouseup="stopCounting('2J1')">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">2</td>
+                        <td id="2A2" onmousedown="startCounting('2A2')" onmouseup="stopCounting('2A2')">&nbsp;</td>
+                        <td id="2B2" onmousedown="startCounting('2B2')" onmouseup="stopCounting('2B2')">&nbsp;</td>
+                        <td id="2C2" onmousedown="startCounting('2C2')" onmouseup="stopCounting('2C2')">&nbsp;</td>
+                        <td id="2D2" onmousedown="startCounting('2D2')" onmouseup="stopCounting('2D2')">&nbsp;</td>
+                        <td id="2E2" onmousedown="startCounting('2E2')" onmouseup="stopCounting('2E2')">&nbsp;</td>
+                        <td id="2F2" onmousedown="startCounting('2F2')" onmouseup="stopCounting('2F2')">&nbsp;</td>
+                        <td id="2G2" onmousedown="startCounting('2G2')" onmouseup="stopCounting('2G2')">&nbsp;</td>
+                        <td id="2H2" onmousedown="startCounting('2H2')" onmouseup="stopCounting('2H2')">&nbsp;</td>
+                        <td id="2I2" onmousedown="startCounting('2I2')" onmouseup="stopCounting('2I2')">&nbsp;</td>
+                        <td id="2J2" onmousedown="startCounting('2J2')" onmouseup="stopCounting('2J2')">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">3</td>
+                        <td id="2A3" onmousedown="startCounting('2A3')" onmouseup="stopCounting('2A3')">&nbsp;</td>
+                        <td id="2B3" onmousedown="startCounting('2B3')" onmouseup="stopCounting('2B3')">&nbsp;</td>
+                        <td id="2C3" onmousedown="startCounting('2C3')" onmouseup="stopCounting('2C3')">&nbsp;</td>
+                        <td id="2D3" onmousedown="startCounting('2D3')" onmouseup="stopCounting('2D3')">&nbsp;</td>
+                        <td id="2E3" onmousedown="startCounting('2E3')" onmouseup="stopCounting('2E3')">&nbsp;</td>
+                        <td id="2F3" onmousedown="startCounting('2F3')" onmouseup="stopCounting('2F3')">&nbsp;</td>
+                        <td id="2G3" onmousedown="startCounting('2G3')" onmouseup="stopCounting('2G3')">&nbsp;</td>
+                        <td id="2H3" onmousedown="startCounting('2H3')" onmouseup="stopCounting('2H3')">&nbsp;</td>
+                        <td id="2I3" onmousedown="startCounting('2I3')" onmouseup="stopCounting('2I3')">&nbsp;</td>
+                        <td id="2J3" onmousedown="startCounting('2J3')" onmouseup="stopCounting('2J3')">&nbsp;</td>
+                    <tr>
+                        <td class="numeration-data">4</td>
+                        <td id="2A4" onmousedown="startCounting('2A4')" onmouseup="stopCounting('2A4')">&nbsp;</td>
+                        <td id="2B4" onmousedown="startCounting('2B4')" onmouseup="stopCounting('2B4')">&nbsp;</td>
+                        <td id="2C4" onmousedown="startCounting('2C4')" onmouseup="stopCounting('2C4')">&nbsp;</td>
+                        <td id="2D4" onmousedown="startCounting('2D4')" onmouseup="stopCounting('2D4')">&nbsp;</td>
+                        <td id="2E4" onmousedown="startCounting('2E4')" onmouseup="stopCounting('2E4')">&nbsp;</td>
+                        <td id="2F4" onmousedown="startCounting('2F4')" onmouseup="stopCounting('2F4')">&nbsp;</td>
+                        <td id="2G4" onmousedown="startCounting('2G4')" onmouseup="stopCounting('2G4')">&nbsp;</td>
+                        <td id="2H4" onmousedown="startCounting('2H4')" onmouseup="stopCounting('2H4')">&nbsp;</td>
+                        <td id="2I4" onmousedown="startCounting('2I4')" onmouseup="stopCounting('2I4')">&nbsp;</td>
+                        <td id="2J4" onmousedown="startCounting('2J4')" onmouseup="stopCounting('2J4')">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">5</td>
+                        <td id="2A5" onmousedown="startCounting('2A5')" onmouseup="stopCounting('2A5')">&nbsp;</td>
+                        <td id="2B5" onmousedown="startCounting('2B5')" onmouseup="stopCounting('2B5')">&nbsp;</td>
+                        <td id="2C5" onmousedown="startCounting('2C5')" onmouseup="stopCounting('2C5')">&nbsp;</td>
+                        <td id="2D5" onmousedown="startCounting('2D5')" onmouseup="stopCounting('2D5')">&nbsp;</td>
+                        <td id="2E5" onmousedown="startCounting('2E5')" onmouseup="stopCounting('2E5')">&nbsp;</td>
+                        <td id="2F5" onmousedown="startCounting('2F5')" onmouseup="stopCounting('2F5')">&nbsp;</td>
+                        <td id="2G5" onmousedown="startCounting('2G5')" onmouseup="stopCounting('2G5')">&nbsp;</td>
+                        <td id="2H5" onmousedown="startCounting('2H5')" onmouseup="stopCounting('2H5')">&nbsp;</td>
+                        <td id="2I5" onmousedown="startCounting('2I5')" onmouseup="stopCounting('2I5')">&nbsp;</td>
+                        <td id="2J5" onmousedown="startCounting('2J5')" onmouseup="stopCounting('2J5')">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">6</td>
+                        <td id="2A6" onmousedown="startCounting('2A6')" onmouseup="stopCounting('2A6')">&nbsp;</td>
+                        <td id="2B6" onmousedown="startCounting('2B6')" onmouseup="stopCounting('2B6')">&nbsp;</td>
+                        <td id="2C6" onmousedown="startCounting('2C6')" onmouseup="stopCounting('2C6')">&nbsp;</td>
+                        <td id="2D6" onmousedown="startCounting('2D6')" onmouseup="stopCounting('2D6')">&nbsp;</td>
+                        <td id="2E6" onmousedown="startCounting('2E6')" onmouseup="stopCounting('2E6')">&nbsp;</td>
+                        <td id="2F6" onmousedown="startCounting('2F6')" onmouseup="stopCounting('2F6')">&nbsp;</td>
+                        <td id="2G6" onmousedown="startCounting('2G6')" onmouseup="stopCounting('2G6')">&nbsp;</td>
+                        <td id="2H6" onmousedown="startCounting('2H6')" onmouseup="stopCounting('2H6')">&nbsp;</td>
+                        <td id="2I6" onmousedown="startCounting('2I6')" onmouseup="stopCounting('2I6')">&nbsp;</td>
+                        <td id="2J6" onmousedown="startCounting('2J6')" onmouseup="stopCounting('2J6')">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">7</td>
+                        <td id="2A7" onmousedown="startCounting('2A7')" onmouseup="stopCounting('2A7')">&nbsp;</td>
+                        <td id="2B7" onmousedown="startCounting('2B7')" onmouseup="stopCounting('2B7')">&nbsp;</td>
+                        <td id="2C7" onmousedown="startCounting('2C7')" onmouseup="stopCounting('2C7')">&nbsp;</td>
+                        <td id="2D7" onmousedown="startCounting('2D7')" onmouseup="stopCounting('2D7')">&nbsp;</td>
+                        <td id="2E7" onmousedown="startCounting('2E7')" onmouseup="stopCounting('2E7')">&nbsp;</td>
+                        <td id="2F7" onmousedown="startCounting('2F7')" onmouseup="stopCounting('2F7')">&nbsp;</td>
+                        <td id="2G7" onmousedown="startCounting('2G7')" onmouseup="stopCounting('2G7')">&nbsp;</td>
+                        <td id="2H7" onmousedown="startCounting('2H7')" onmouseup="stopCounting('2H7')">&nbsp;</td>
+                        <td id="2I7" onmousedown="startCounting('2I7')" onmouseup="stopCounting('2I7')">&nbsp;</td>
+                        <td id="2J7" onmousedown="startCounting('2J7')" onmouseup="stopCounting('2J7')">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">8</td>
+                        <td id="2A8" onmousedown="startCounting('2A8')" onmouseup="stopCounting('2A8')">&nbsp;</td>
+                        <td id="2B8" onmousedown="startCounting('2B8')" onmouseup="stopCounting('2B8')">&nbsp;</td>
+                        <td id="2C8" onmousedown="startCounting('2C8')" onmouseup="stopCounting('2C8')">&nbsp;</td>
+                        <td id="2D8" onmousedown="startCounting('2D8')" onmouseup="stopCounting('2D8')">&nbsp;</td>
+                        <td id="2E8" onmousedown="startCounting('2E8')" onmouseup="stopCounting('2E8')">&nbsp;</td>
+                        <td id="2F8" onmousedown="startCounting('2F8')" onmouseup="stopCounting('2F8')">&nbsp;</td>
+                        <td id="2G8" onmousedown="startCounting('2G8')" onmouseup="stopCounting('2G8')">&nbsp;</td>
+                        <td id="2H8" onmousedown="startCounting('2H8')" onmouseup="stopCounting('2H8')">&nbsp;</td>
+                        <td id="2I8" onmousedown="startCounting('2I8')" onmouseup="stopCounting('2I8')">&nbsp;</td>
+                        <td id="2J8" onmousedown="startCounting('2J8')" onmouseup="stopCounting('2J8')">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">9</td>
+                        <td id="2A9" onmousedown="startCounting('2A9')" onmouseup="stopCounting('2A9')">&nbsp;</td>
+                        <td id="2B9" onmousedown="startCounting('2B9')" onmouseup="stopCounting('2B9')">&nbsp;</td>
+                        <td id="2C9" onmousedown="startCounting('2C9')" onmouseup="stopCounting('2C9')">&nbsp;</td>
+                        <td id="2D9" onmousedown="startCounting('2D9')" onmouseup="stopCounting('2D9')">&nbsp;</td>
+                        <td id="2E9" onmousedown="startCounting('2E9')" onmouseup="stopCounting('2E9')">&nbsp;</td>
+                        <td id="2F9" onmousedown="startCounting('2F9')" onmouseup="stopCounting('2F9')">&nbsp;</td>
+                        <td id="2G9" onmousedown="startCounting('2G9')" onmouseup="stopCounting('2G9')">&nbsp;</td>
+                        <td id="2H9" onmousedown="startCounting('2H9')" onmouseup="stopCounting('2H9')">&nbsp;</td>
+                        <td id="2I9" onmousedown="startCounting('2I9')" onmouseup="stopCounting('2I9')">&nbsp;</td>
+                        <td id="2J9" onmousedown="startCounting('2J9')" onmouseup="stopCounting('2J9')">&nbsp;</td>
+                    </tr>
+                </table>
+
+                <div class="ship-text">
+                    <i class="fas fa-anchor"></i>
+                    Ships to add:
+                    <br/>
+                    <i class="fas fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i>
+                    <span>4 ships left</span>
+                    <br/>
+                    <i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i>
+                    <span>3 ships left</span>
+                    <br/>
+                    <i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i>
+                    <span>2 ships left</span>
+                    <br/>
+                    <i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i>
+                    <span>1 ships left</span>
+                    <br/>
+                </div>
+
+            </div>
+
         </div>
     </div>
     
