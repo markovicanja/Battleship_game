@@ -263,10 +263,14 @@ var table3Matrix = [], table4Matrix = [];
 
 
 function initGame() {
+    ship1_length1 = 4, ship1_length2 = 3, ship1_length3 = 2, ship1_length4 = 1;
+    ship2_length1 = 4, ship2_length2 = 3, ship2_length3 = 2, ship2_length4 = 1;
+
     $("#label1").html(localStorage.getItem("player1")+"'s board!");
     $("#label2").html(localStorage.getItem("player2")+"'s board!");
     $("#label3").html(localStorage.getItem("player1")+"'s board!");
     $("#label4").html(localStorage.getItem("player2")+"'s board!");
+
     addShips(1); addShips(2);
     coverTable(2);
     currentPlayer = 1;
@@ -300,8 +304,9 @@ function shoot(cell) {
     
     if (currentPlayer == 1) {
         if (table2Matrix[i][j] == 2) {
-            table4Matrix[i][j] == 2;
+            table4Matrix[i][j] = 2;
             $('#'+cell).addClass("bg-star");
+            if (checkIfSunk(i, j, table2Matrix, table4Matrix)) shipSunk(i, j, table4Matrix, 4);
         }
         else {
             table4Matrix[i][j] == 1;
@@ -312,8 +317,9 @@ function shoot(cell) {
     }
     else if (currentPlayer == 2) {
         if (table1Matrix[i][j] == 2) {
-            table3Matrix[i][j] == 2;
+            table3Matrix[i][j] = 2;
             $('#'+cell).addClass("bg-star");
+            if (checkIfSunk(i, j, table1Matrix, table3Matrix)) shipSunk(i, j, table3Matrix, 3);
         }
         else {
             table3Matrix[i][j] == 1;
@@ -334,5 +340,64 @@ function changeTurn() {
         currentPlayer = 1;
         coverTable(2);
         uncoverTable(1);
+    }
+}
+
+function checkIfSunk(i, j, matrix1, matrix2) {
+    var m = i-1;
+    while (m>=0 && matrix1[m][j] == 2) {
+        if (matrix2[m][j]!=2) return false;
+        m--;
+    }
+    m = i+1;
+    while (m<10 && matrix1[m][j] == 2) {
+        if (matrix2[m][j]!=2) return false;
+        m++;
+    }
+    m=j-1;
+    while (m>=0 && matrix1[i][m] == 2) {
+        if (matrix2[i][m]!=2) return false;
+        m--;
+    }
+    m=j+1;
+    while (m<10 && matrix1[i][m] == 2) {
+        if (matrix2[i][m]!=2) return false;
+        m++;
+    }
+    return true;
+}
+
+function shipSunk(i, j, matrix, num) {
+    var cell = "#"+ num + String.fromCharCode(j + 65) + i;
+    $(cell).removeClass("bg-star");
+    $(cell).addClass("bg-sunk");
+    
+    var m = i-1;
+    while (m>=0 && matrix[m][j] == 2) {
+        cell = "#"+ num + String.fromCharCode(j + 65) + m;
+        $(cell).removeClass("bg-star");
+        $(cell).addClass("bg-sunk");
+        m--;
+    }
+    m = i+1;
+    while (m<10 && matrix[m][j] == 2) {
+        cell = "#"+ num + String.fromCharCode(j + 65) + m;
+        $(cell).removeClass("bg-star");
+        $(cell).addClass("bg-sunk");
+        m++;
+    }
+    m=j-1;
+    while (m>=0 && matrix[i][m] == 2) {
+        cell = "#"+ num + String.fromCharCode(m + 65) + i;
+        $(cell).removeClass("bg-star");
+        $(cell).addClass("bg-sunk");
+        m--;
+    }
+    m=j+1;
+    while (m<10 && matrix[i][m] == 2) {
+        cell = "#"+ num + String.fromCharCode(m + 65) + i;
+        $(cell).removeClass("bg-star");
+        $(cell).addClass("bg-sunk");
+        m++;
     }
 }
