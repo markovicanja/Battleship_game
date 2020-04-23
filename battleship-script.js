@@ -243,10 +243,12 @@ function checkIfLastPlaced() {
             currentPlayer = 2;
             uncoverTable(2);
             coverTable(1);
+            localStorage.setItem("table1", JSON.stringify(table1Matrix));
         }
     }
     else if (currentPlayer == 2) {
         if (ship2_length1 == 0 && ship2_length2 == 0 && ship2_length3 == 0 && ship2_length4 == 0) {
+            localStorage.setItem("table2", JSON.stringify(table2Matrix));
             window.open("battleship-game.html", "_self");
         }
     }
