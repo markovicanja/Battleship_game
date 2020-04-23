@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship | Game</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="battleship-style.css">
+    <script src="battleship-script.js"></script>
+
+</head>
+<body onload="initGame()">
+
+    <div class="container-fluid mt-3">
+        <div class="row text-center">
+            <div class="offset-sm-1 col-sm-5">
+                <span id="label1">Player1's board</span>
+                <div id="cover1" class="fadeInDown hidden">
+                    <span id="label3">Player1's board</span>
+                    <table id="table3">
+                        <tr class="numeration-row">
+                            <td>&nbsp;</td>
+                            <td>A</td>
+                            <td>B</td>
+                            <td>C</td>
+                            <td>D</td>
+                            <td>E</td>
+                            <td>F</td>
+                            <td>G</td>
+                            <td>H</td>
+                            <td>I</td>
+                            <td>J</td>
+                        </tr>
+                        <tr>
+                            <td class="numeration-data">0</td>
+                            <td id="3A0" onclick="shoot('3A0')">&nbsp;</td>
+                            <td id="3B0" onclick="shoot('3B0')">&nbsp;</td>
+                            <td id="3C0" onclick="shoot('3C0')">&nbsp;</td>
+                            <td id="3D0" onclick="shoot('3D0')">&nbsp;</td>
+                            <td id="3E0" onclick="shoot('3E0')">&nbsp;</td>
+                            <td id="3F0" onclick="shoot('3F0')">&nbsp;</td>
+                            <td id="3G0" onclick="shoot('3G0')">&nbsp;</td>
+                            <td id="3H0" onclick="shoot('3H0')">&nbsp;</td>
+                            <td id="3I0" onclick="shoot('3I0')">&nbsp;</td>
+                            <td id="3J0" onclick="shoot('3J0')">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="numeration-data">1</td>
+                            <td id="3A1" onclick="shoot('3A1')">&nbsp;</td>
+                            <td id="3B1" onclick="shoot('3B1')">&nbsp;</td>
+                            <td id="3C1" onclick="shoot('3C1')">&nbsp;</td>
+                            <td id="3D1" onclick="shoot('3D1')">&nbsp;</td>
+                            <td id="3E1" onclick="shoot('3E1')">&nbsp;</td>
+                            <td id="3F1" onclick="shoot('3F1')">&nbsp;</td>
+                            <td id="3G1" onclick="shoot('3G1')">&nbsp;</td>
+                            <td id="3H1" onclick="shoot('3H1')">&nbsp;</td>
+                            <td id="3I1" onclick="shoot('3I1')">&nbsp;</td>
+                            <td id="3J1" onclick="shoot('3J1')">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="numeration-data">2</td>
+                            <td id="3A2" onclick="shoot('3A2')">&nbsp;</td>
+                            <td id="3B2" onclick="shoot('3B2')">&nbsp;</td>
+                            <td id="3C2" onclick="shoot('3C2')">&nbsp;</td>
+                            <td id="3D2" onclick="shoot('3D2')">&nbsp;</td>
+                            <td id="3E2" onclick="shoot('3E2')">&nbsp;</td>
+                            <td id="3F2" onclick="shoot('3F2')">&nbsp;</td>
+                            <td id="3G2" onclick="shoot('3G2')">&nbsp;</td>
+                            <td id="3H2" onclick="shoot('3H2')">&nbsp;</td>
+                            <td id="3I2" onclick="shoot('3I2')">&nbsp;</td>
+                            <td id="3J2" onclick="shoot('3J2')">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="numeration-data">3</td>
+                            <td id="3A3" onclick="shoot('3A3')">&nbsp;</td>
+                            <td id="3B3" onclick="shoot('3B3')">&nbsp;</td>
+                            <td id="3C3" onclick="shoot('3C3')">&nbsp;</td>
+                            <td id="3D3" onclick="shoot('3D3')">&nbsp;</td>
+                            <td id="3E3" onclick="shoot('3E3')">&nbsp;</td>
+                            <td id="3F3" onclick="shoot('3F3')">&nbsp;</td>
+                            <td id="3G3" onclick="shoot('3G3')">&nbsp;</td>
+                            <td id="3H3" onclick="shoot('3H3')">&nbsp;</td>
+                            <td id="3I3" onclick="shoot('3I3')">&nbsp;</td>
+                            <td id="3J3" onclick="shoot('3J3')">&nbsp;</td>
+                        <tr>
+                            <td class="numeration-data">4</td>
+                            <td id="3A4" onclick="shoot('3A4')">&nbsp;</td>
+                            <td id="3B4" onclick="shoot('3B4')">&nbsp;</td>
+                            <td id="3C4" onclick="shoot('3C4')">&nbsp;</td>
+                            <td id="3D4" onclick="shoot('3D4')">&nbsp;</td>
+                            <td id="3E4" onclick="shoot('3E4')">&nbsp;</td>
+                            <td id="3F4" onclick="shoot('3F4')">&nbsp;</td>
+                            <td id="3G4" onclick="shoot('3G4')">&nbsp;</td>
+                            <td id="3H4" onclick="shoot('3H4')">&nbsp;</td>
+                            <td id="3I4" onclick="shoot('3I4')">&nbsp;</td>
+                            <td id="3J4" onclick="shoot('3J4')">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="numeration-data">5</td>
+                            <td id="3A5" onclick="shoot('3A5')">&nbsp;</td>
+                            <td id="3B5" onclick="shoot('3B5')">&nbsp;</td>
+                            <td id="3C5" onclick="shoot('3C5')">&nbsp;</td>
+                            <td id="3D5" onclick="shoot('3D5')">&nbsp;</td>
+                            <td id="3E5" onclick="shoot('3E5')">&nbsp;</td>
+                            <td id="3F5" onclick="shoot('3F5')">&nbsp;</td>
+                            <td id="3G5" onclick="shoot('3G5')">&nbsp;</td>
+                            <td id="3H5" onclick="shoot('3H5')">&nbsp;</td>
+                            <td id="3I5" onclick="shoot('3I5')">&nbsp;</td>
+                            <td id="3J5" onclick="shoot('3J5')">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="numeration-data">6</td>
+                            <td id="3A6" onclick="shoot('3A6')">&nbsp;</td>
+                            <td id="3B6" onclick="shoot('3B6')">&nbsp;</td>
+                            <td id="3C6" onclick="shoot('3C6')">&nbsp;</td>
+                            <td id="3D6" onclick="shoot('3D6')">&nbsp;</td>
+                            <td id="3E6" onclick="shoot('3E6')">&nbsp;</td>
+                            <td id="3F6" onclick="shoot('3F6')">&nbsp;</td>
+                            <td id="3G6" onclick="shoot('3G6')">&nbsp;</td>
+                            <td id="3H6" onclick="shoot('3H6')">&nbsp;</td>
+                            <td id="3I6" onclick="shoot('3I6')">&nbsp;</td>
+                            <td id="3J6" onclick="shoot('3J6')">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="numeration-data">7</td>
+                            <td id="3A7" onclick="shoot('3A7')">&nbsp;</td>
+                            <td id="3B7" onclick="shoot('3B7')">&nbsp;</td>
+                            <td id="3C7" onclick="shoot('3C7')">&nbsp;</td>
+                            <td id="3D7" onclick="shoot('3D7')">&nbsp;</td>
+                            <td id="3E7" onclick="shoot('3E7')">&nbsp;</td>
+                            <td id="3F7" onclick="shoot('3F7')">&nbsp;</td>
+                            <td id="3G7" onclick="shoot('3G7')">&nbsp;</td>
+                            <td id="3H7" onclick="shoot('3H7')">&nbsp;</td>
+                            <td id="3I7" onclick="shoot('3I7')">&nbsp;</td>
+                            <td id="3J7" onclick="shoot('3J7')">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="numeration-data">8</td>
+                            <td id="3A8" onclick="shoot('3A8')">&nbsp;</td>
+                            <td id="3B8" onclick="shoot('3B8')">&nbsp;</td>
+                            <td id="3C8" onclick="shoot('3C8')">&nbsp;</td>
+                            <td id="3D8" onclick="shoot('3D8')">&nbsp;</td>
+                            <td id="3E8" onclick="shoot('3E8')">&nbsp;</td>
+                            <td id="3F8" onclick="shoot('3F8')">&nbsp;</td>
+                            <td id="3G8" onclick="shoot('3G8')">&nbsp;</td>
+                            <td id="3H8" onclick="shoot('3H8')">&nbsp;</td>
+                            <td id="3I8" onclick="shoot('3I8')">&nbsp;</td>
+                            <td id="3J8" onclick="shoot('3J8')">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="numeration-data">9</td>
+                            <td id="3A9" onclick="shoot('3A9')">&nbsp;</td>
+                            <td id="3B9" onclick="shoot('3B9')">&nbsp;</td>
+                            <td id="3C9" onclick="shoot('3C9')">&nbsp;</td>
+                            <td id="3D9" onclick="shoot('3D9')">&nbsp;</td>
+                            <td id="3E9" onclick="shoot('3E9')">&nbsp;</td>
+                            <td id="3F9" onclick="shoot('3F9')">&nbsp;</td>
+                            <td id="3G9" onclick="shoot('3G9')">&nbsp;</td>
+                            <td id="3H9" onclick="shoot('3H9')">&nbsp;</td>
+                            <td id="3I9" onclick="shoot('3I9')">&nbsp;</td>
+                            <td id="3J9" onclick="shoot('3J9')">&nbsp;</td>
+                        </tr>
+                    </table>
+                </div>
+                <table id="table1">
+                    <tr class="numeration-row">
+                        <td>&nbsp;</td>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>C</td>
+                        <td>D</td>
+                        <td>E</td>
+                        <td>F</td>
+                        <td>G</td>
+                        <td>H</td>
+                        <td>I</td>
+                        <td>J</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">0</td>
+                        <td id="1A0">&nbsp;</td>
+                        <td id="1B0">&nbsp;</td>
+                        <td id="1C0">&nbsp;</td>
+                        <td id="1D0">&nbsp;</td>
+                        <td id="1E0">&nbsp;</td>
+                        <td id="1F0">&nbsp;</td>
+                        <td id="1G0">&nbsp;</td>
+                        <td id="1H0">&nbsp;</td>
+                        <td id="1I0">&nbsp;</td>
+                        <td id="1J0">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">1</td>
+                        <td id="1A1">&nbsp;</td>
+                        <td id="1B1">&nbsp;</td>
+                        <td id="1C1">&nbsp;</td>
+                        <td id="1D1">&nbsp;</td>
+                        <td id="1E1">&nbsp;</td>
+                        <td id="1F1">&nbsp;</td>
+                        <td id="1G1">&nbsp;</td>
+                        <td id="1H1">&nbsp;</td>
+                        <td id="1I1">&nbsp;</td>
+                        <td id="1J1">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">2</td>
+                        <td id="1A2">&nbsp;</td>
+                        <td id="1B2">&nbsp;</td>
+                        <td id="1C2">&nbsp;</td>
+                        <td id="1D2">&nbsp;</td>
+                        <td id="1E2">&nbsp;</td>
+                        <td id="1F2">&nbsp;</td>
+                        <td id="1G2">&nbsp;</td>
+                        <td id="1H2">&nbsp;</td>
+                        <td id="1I2">&nbsp;</td>
+                        <td id="1J2">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">3</td>
+                        <td id="1A3">&nbsp;</td>
+                        <td id="1B3">&nbsp;</td>
+                        <td id="1C3">&nbsp;</td>
+                        <td id="1D3">&nbsp;</td>
+                        <td id="1E3">&nbsp;</td>
+                        <td id="1F3">&nbsp;</td>
+                        <td id="1G3">&nbsp;</td>
+                        <td id="1H3">&nbsp;</td>
+                        <td id="1I3">&nbsp;</td>
+                        <td id="1J3">&nbsp;</td>
+                    <tr>
+                        <td class="numeration-data">4</td>
+                        <td id="1A4">&nbsp;</td>
+                        <td id="1B4">&nbsp;</td>
+                        <td id="1C4">&nbsp;</td>
+                        <td id="1D4">&nbsp;</td>
+                        <td id="1E4">&nbsp;</td>
+                        <td id="1F4">&nbsp;</td>
+                        <td id="1G4">&nbsp;</td>
+                        <td id="1H4">&nbsp;</td>
+                        <td id="1I4">&nbsp;</td>
+                        <td id="1J4">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">5</td>
+                        <td id="1A5">&nbsp;</td>
+                        <td id="1B5">&nbsp;</td>
+                        <td id="1C5">&nbsp;</td>
+                        <td id="1D5">&nbsp;</td>
+                        <td id="1E5">&nbsp;</td>
+                        <td id="1F5">&nbsp;</td>
+                        <td id="1G5">&nbsp;</td>
+                        <td id="1H5">&nbsp;</td>
+                        <td id="1I5">&nbsp;</td>
+                        <td id="1J5">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">6</td>
+                        <td id="1A6">&nbsp;</td>
+                        <td id="1B6">&nbsp;</td>
+                        <td id="1C6">&nbsp;</td>
+                        <td id="1D6">&nbsp;</td>
+                        <td id="1E6">&nbsp;</td>
+                        <td id="1F6">&nbsp;</td>
+                        <td id="1G6">&nbsp;</td>
+                        <td id="1H6">&nbsp;</td>
+                        <td id="1I6">&nbsp;</td>
+                        <td id="1J6">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">7</td>
+                        <td id="1A7">&nbsp;</td>
+                        <td id="1B7">&nbsp;</td>
+                        <td id="1C7">&nbsp;</td>
+                        <td id="1D7">&nbsp;</td>
+                        <td id="1E7">&nbsp;</td>
+                        <td id="1F7">&nbsp;</td>
+                        <td id="1G7">&nbsp;</td>
+                        <td id="1H7">&nbsp;</td>
+                        <td id="1I7">&nbsp;</td>
+                        <td id="1J7">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">8</td>
+                        <td id="1A8">&nbsp;</td>
+                        <td id="1B8">&nbsp;</td>
+                        <td id="1C8">&nbsp;</td>
+                        <td id="1D8">&nbsp;</td>
+                        <td id="1E8">&nbsp;</td>
+                        <td id="1F8">&nbsp;</td>
+                        <td id="1G8">&nbsp;</td>
+                        <td id="1H8">&nbsp;</td>
+                        <td id="1I8">&nbsp;</td>
+                        <td id="1J8">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">9</td>
+                        <td id="1A9">&nbsp;</td>
+                        <td id="1B9">&nbsp;</td>
+                        <td id="1C9">&nbsp;</td>
+                        <td id="1D9">&nbsp;</td>
+                        <td id="1E9">&nbsp;</td>
+                        <td id="1F9">&nbsp;</td>
+                        <td id="1G9">&nbsp;</td>
+                        <td id="1H9">&nbsp;</td>
+                        <td id="1I9">&nbsp;</td>
+                        <td id="1J9">&nbsp;</td>
+                    </tr>
+                </table>
+                
+            </div>
+
+            <div class="col-sm-5">
+                <div id="label2">Player2's board</div>
+                <div id="cover2" class="fadeInDown">
+                    <span id="label4">Player2's board</span>
+                    <table id="table4">
+                        <tr class="numeration-row">
+                            <td>&nbsp;</td>
+                            <td>A</td>
+                            <td>B</td>
+                            <td>C</td>
+                            <td>D</td>
+                            <td>E</td>
+                            <td>F</td>
+                            <td>G</td>
+                            <td>H</td>
+                            <td>I</td>
+                            <td>J</td>
+                        </tr>
+                        <tr>
+                            <td class="numeration-data">0</td>
+                            <td id="4A0" onclick="shoot('4A0')">&nbsp;</td>
+                            <td id="4B0" onclick="shoot('4B0')">&nbsp;</td>
+                            <td id="4C0" onclick="shoot('4C0')">&nbsp;</td>
+                            <td id="4D0" onclick="shoot('4D0')">&nbsp;</td>
+                            <td id="4E0" onclick="shoot('4E0')">&nbsp;</td>
+                            <td id="4F0" onclick="shoot('4F0')">&nbsp;</td>
+                            <td id="4G0" onclick="shoot('4G0')">&nbsp;</td>
+                            <td id="4H0" onclick="shoot('4H0')">&nbsp;</td>
+                            <td id="4I0" onclick="shoot('4I0')">&nbsp;</td>
+                            <td id="4J0" onclick="shoot('4J0')">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="numeration-data">1</td>
+                            <td id="4A1" onclick="shoot('4A1')">&nbsp;</td>
+                            <td id="4B1" onclick="shoot('4B1')">&nbsp;</td>
+                            <td id="4C1" onclick="shoot('4C1')">&nbsp;</td>
+                            <td id="4D1" onclick="shoot('4D1')">&nbsp;</td>
+                            <td id="4E1" onclick="shoot('4E1')">&nbsp;</td>
+                            <td id="4F1" onclick="shoot('4F1')">&nbsp;</td>
+                            <td id="4G1" onclick="shoot('4G1')">&nbsp;</td>
+                            <td id="4H1" onclick="shoot('4H1')">&nbsp;</td>
+                            <td id="4I1" onclick="shoot('4I1')">&nbsp;</td>
+                            <td id="4J1" onclick="shoot('4J1')">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="numeration-data">2</td>
+                            <td id="4A2" onclick="shoot('4A2')">&nbsp;</td>
+                            <td id="4B2" onclick="shoot('4B2')">&nbsp;</td>
+                            <td id="4C2" onclick="shoot('4C2')">&nbsp;</td>
+                            <td id="4D2" onclick="shoot('4D2')">&nbsp;</td>
+                            <td id="4E2" onclick="shoot('4E2')">&nbsp;</td>
+                            <td id="4F2" onclick="shoot('4F2')">&nbsp;</td>
+                            <td id="4G2" onclick="shoot('4G2')">&nbsp;</td>
+                            <td id="4H2" onclick="shoot('4H2')">&nbsp;</td>
+                            <td id="4I2" onclick="shoot('4I2')">&nbsp;</td>
+                            <td id="4J2" onclick="shoot('4J2')">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="numeration-data">3</td>
+                            <td id="4A3" onclick="shoot('4A3')">&nbsp;</td>
+                            <td id="4B3" onclick="shoot('4B3')">&nbsp;</td>
+                            <td id="4C3" onclick="shoot('4C3')">&nbsp;</td>
+                            <td id="4D3" onclick="shoot('4D3')">&nbsp;</td>
+                            <td id="4E3" onclick="shoot('4E3')">&nbsp;</td>
+                            <td id="4F3" onclick="shoot('4F3')">&nbsp;</td>
+                            <td id="4G3" onclick="shoot('4G3')">&nbsp;</td>
+                            <td id="4H3" onclick="shoot('4H3')">&nbsp;</td>
+                            <td id="4I3" onclick="shoot('4I3')">&nbsp;</td>
+                            <td id="4J3" onclick="shoot('4J3')">&nbsp;</td>
+                        <tr>
+                            <td class="numeration-data">4</td>
+                            <td id="4A4" onclick="shoot('4A4')">&nbsp;</td>
+                            <td id="4B4" onclick="shoot('4B4')">&nbsp;</td>
+                            <td id="4C4" onclick="shoot('4C4')">&nbsp;</td>
+                            <td id="4D4" onclick="shoot('4D4')">&nbsp;</td>
+                            <td id="4E4" onclick="shoot('4E4')">&nbsp;</td>
+                            <td id="4F4" onclick="shoot('4F4')">&nbsp;</td>
+                            <td id="4G4" onclick="shoot('4G4')">&nbsp;</td>
+                            <td id="4H4" onclick="shoot('4H4')">&nbsp;</td>
+                            <td id="4I4" onclick="shoot('4I4')">&nbsp;</td>
+                            <td id="4J4" onclick="shoot('4J4')">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="numeration-data">5</td>
+                            <td id="4A5" onclick="shoot('4A5')">&nbsp;</td>
+                            <td id="4B5" onclick="shoot('4B5')">&nbsp;</td>
+                            <td id="4C5" onclick="shoot('4C5')">&nbsp;</td>
+                            <td id="4D5" onclick="shoot('4D5')">&nbsp;</td>
+                            <td id="4E5" onclick="shoot('4E5')">&nbsp;</td>
+                            <td id="4F5" onclick="shoot('4F5')">&nbsp;</td>
+                            <td id="4G5" onclick="shoot('4G5')">&nbsp;</td>
+                            <td id="4H5" onclick="shoot('4H5')">&nbsp;</td>
+                            <td id="4I5" onclick="shoot('4I5')">&nbsp;</td>
+                            <td id="4J5" onclick="shoot('4J5')">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="numeration-data">6</td>
+                            <td id="4A6" onclick="shoot('4A6')">&nbsp;</td>
+                            <td id="4B6" onclick="shoot('4B6')">&nbsp;</td>
+                            <td id="4C6" onclick="shoot('4C6')">&nbsp;</td>
+                            <td id="4D6" onclick="shoot('4D6')">&nbsp;</td>
+                            <td id="4E6" onclick="shoot('4E6')">&nbsp;</td>
+                            <td id="4F6" onclick="shoot('4F6')">&nbsp;</td>
+                            <td id="4G6" onclick="shoot('4G6')">&nbsp;</td>
+                            <td id="4H6" onclick="shoot('4H6')">&nbsp;</td>
+                            <td id="4I6" onclick="shoot('4I6')">&nbsp;</td>
+                            <td id="4J6" onclick="shoot('4J6')">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="numeration-data">7</td>
+                            <td id="4A7" onclick="shoot('4A7')">&nbsp;</td>
+                            <td id="4B7" onclick="shoot('4B7')">&nbsp;</td>
+                            <td id="4C7" onclick="shoot('4C7')">&nbsp;</td>
+                            <td id="4D7" onclick="shoot('4D7')">&nbsp;</td>
+                            <td id="4E7" onclick="shoot('4E7')">&nbsp;</td>
+                            <td id="4F7" onclick="shoot('4F7')">&nbsp;</td>
+                            <td id="4G7" onclick="shoot('4G7')">&nbsp;</td>
+                            <td id="4H7" onclick="shoot('4H7')">&nbsp;</td>
+                            <td id="4I7" onclick="shoot('4I7')">&nbsp;</td>
+                            <td id="4J7" onclick="shoot('4J7')">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="numeration-data">8</td>
+                            <td id="4A8" onclick="shoot('4A8')">&nbsp;</td>
+                            <td id="4B8" onclick="shoot('4B8')">&nbsp;</td>
+                            <td id="4C8" onclick="shoot('4C8')">&nbsp;</td>
+                            <td id="4D8" onclick="shoot('4D8')">&nbsp;</td>
+                            <td id="4E8" onclick="shoot('4E8')">&nbsp;</td>
+                            <td id="4F8" onclick="shoot('4F8')">&nbsp;</td>
+                            <td id="4G8" onclick="shoot('4G8')">&nbsp;</td>
+                            <td id="4H8" onclick="shoot('4H8')">&nbsp;</td>
+                            <td id="4I8" onclick="shoot('4I8')">&nbsp;</td>
+                            <td id="4J8" onclick="shoot('4J8')">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="numeration-data">9</td>
+                            <td id="4A9" onclick="shoot('4A9')">&nbsp;</td>
+                            <td id="4B9" onclick="shoot('4B9')">&nbsp;</td>
+                            <td id="4C9" onclick="shoot('4C9')">&nbsp;</td>
+                            <td id="4D9" onclick="shoot('4D9')">&nbsp;</td>
+                            <td id="4E9" onclick="shoot('4E9')">&nbsp;</td>
+                            <td id="4F9" onclick="shoot('4F9')">&nbsp;</td>
+                            <td id="4G9" onclick="shoot('4G9')">&nbsp;</td>
+                            <td id="4H9" onclick="shoot('4H9')">&nbsp;</td>
+                            <td id="4I9" onclick="shoot('4I9')">&nbsp;</td>
+                            <td id="4J9" onclick="shoot('4J9')">&nbsp;</td>
+                        </tr>
+                    </table>
+                </div>
+                <table id="table2"> 
+                    <tr class="numeration-row">
+                        <td>&nbsp;</td>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>C</td>
+                        <td>D</td>
+                        <td>E</td>
+                        <td>F</td>
+                        <td>G</td>
+                        <td>H</td>
+                        <td>I</td>
+                        <td>J</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">0</td>
+                        <td id="2A0">&nbsp;</td>
+                        <td id="2B0">&nbsp;</td>
+                        <td id="2C0">&nbsp;</td>
+                        <td id="2D0">&nbsp;</td>
+                        <td id="2E0">&nbsp;</td>
+                        <td id="2F0">&nbsp;</td>
+                        <td id="2G0">&nbsp;</td>
+                        <td id="2H0">&nbsp;</td>
+                        <td id="2I0">&nbsp;</td>
+                        <td id="2J0">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">1</td>
+                        <td id="2A1">&nbsp;</td>
+                        <td id="2B1">&nbsp;</td>
+                        <td id="2C1">&nbsp;</td>
+                        <td id="2D1">&nbsp;</td>
+                        <td id="2E1">&nbsp;</td>
+                        <td id="2F1">&nbsp;</td>
+                        <td id="2G1">&nbsp;</td>
+                        <td id="2H1">&nbsp;</td>
+                        <td id="2I1">&nbsp;</td>
+                        <td id="2J1">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">2</td>
+                        <td id="2A2">&nbsp;</td>
+                        <td id="2B2">&nbsp;</td>
+                        <td id="2C2">&nbsp;</td>
+                        <td id="2D2">&nbsp;</td>
+                        <td id="2E2">&nbsp;</td>
+                        <td id="2F2">&nbsp;</td>
+                        <td id="2G2">&nbsp;</td>
+                        <td id="2H2">&nbsp;</td>
+                        <td id="2I2">&nbsp;</td>
+                        <td id="2J2">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">3</td>
+                        <td id="2A3">&nbsp;</td>
+                        <td id="2B3">&nbsp;</td>
+                        <td id="2C3">&nbsp;</td>
+                        <td id="2D3">&nbsp;</td>
+                        <td id="2E3">&nbsp;</td>
+                        <td id="2F3">&nbsp;</td>
+                        <td id="2G3">&nbsp;</td>
+                        <td id="2H3">&nbsp;</td>
+                        <td id="2I3">&nbsp;</td>
+                        <td id="2J3">&nbsp;</td>
+                    <tr>
+                        <td class="numeration-data">4</td>
+                        <td id="2A4">&nbsp;</td>
+                        <td id="2B4">&nbsp;</td>
+                        <td id="2C4">&nbsp;</td>
+                        <td id="2D4">&nbsp;</td>
+                        <td id="2E4">&nbsp;</td>
+                        <td id="2F4">&nbsp;</td>
+                        <td id="2G4">&nbsp;</td>
+                        <td id="2H4">&nbsp;</td>
+                        <td id="2I4">&nbsp;</td>
+                        <td id="2J4">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">5</td>
+                        <td id="2A5">&nbsp;</td>
+                        <td id="2B5">&nbsp;</td>
+                        <td id="2C5">&nbsp;</td>
+                        <td id="2D5">&nbsp;</td>
+                        <td id="2E5">&nbsp;</td>
+                        <td id="2F5">&nbsp;</td>
+                        <td id="2G5">&nbsp;</td>
+                        <td id="2H5">&nbsp;</td>
+                        <td id="2I5">&nbsp;</td>
+                        <td id="2J5">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">6</td>
+                        <td id="2A6">&nbsp;</td>
+                        <td id="2B6">&nbsp;</td>
+                        <td id="2C6">&nbsp;</td>
+                        <td id="2D6">&nbsp;</td>
+                        <td id="2E6">&nbsp;</td>
+                        <td id="2F6">&nbsp;</td>
+                        <td id="2G6">&nbsp;</td>
+                        <td id="2H6">&nbsp;</td>
+                        <td id="2I6">&nbsp;</td>
+                        <td id="2J6">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">7</td>
+                        <td id="2A7">&nbsp;</td>
+                        <td id="2B7">&nbsp;</td>
+                        <td id="2C7">&nbsp;</td>
+                        <td id="2D7">&nbsp;</td>
+                        <td id="2E7">&nbsp;</td>
+                        <td id="2F7">&nbsp;</td>
+                        <td id="2G7">&nbsp;</td>
+                        <td id="2H7">&nbsp;</td>
+                        <td id="2I7">&nbsp;</td>
+                        <td id="2J7">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">8</td>
+                        <td id="2A8">&nbsp;</td>
+                        <td id="2B8">&nbsp;</td>
+                        <td id="2C8">&nbsp;</td>
+                        <td id="2D8">&nbsp;</td>
+                        <td id="2E8">&nbsp;</td>
+                        <td id="2F8">&nbsp;</td>
+                        <td id="2G8">&nbsp;</td>
+                        <td id="2H8">&nbsp;</td>
+                        <td id="2I8">&nbsp;</td>
+                        <td id="2J8">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="numeration-data">9</td>
+                        <td id="2A9">&nbsp;</td>
+                        <td id="2B9">&nbsp;</td>
+                        <td id="2C9">&nbsp;</td>
+                        <td id="2D9">&nbsp;</td>
+                        <td id="2E9">&nbsp;</td>
+                        <td id="2F9">&nbsp;</td>
+                        <td id="2G9">&nbsp;</td>
+                        <td id="2H9">&nbsp;</td>
+                        <td id="2I9">&nbsp;</td>
+                        <td id="2J9">&nbsp;</td>
+                    </tr>
+                </table>           
+
+            </div>
+
+        </div>
+    </div>
+    
+</body>
+</html>

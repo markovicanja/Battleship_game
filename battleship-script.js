@@ -261,6 +261,25 @@ function checkIfLastPlaced() {
 /* Battleship Game */
 
 function initGame() {
-    $("#label1").html(localStorage.getItem("player1")+", play!");
-    $("#label2").html(localStorage.getItem("player2")+", play!");
+    $("#label1").html(localStorage.getItem("player1")+"'s board!");
+    $("#label2").html(localStorage.getItem("player2")+"'s board!");
+    $("#label3").html(localStorage.getItem("player1")+"'s board!");
+    $("#label4").html(localStorage.getItem("player2")+"'s board!");
+    addShips(1); addShips(2);
+    coverTable(2);
+}
+
+function addShips(num) {
+    var matrix = JSON.parse(localStorage.getItem("table"+num));
+
+    for (i = 0; i < 10; i++) 
+        for (j = 0; j < 10; j++)
+            if (matrix[i][j] == 2) {
+                var cell = "#" + num + String.fromCharCode(j + 65) + i;
+                $(cell).addClass("bg-metal");
+            } 
+}
+
+function shoot(cell) {
+    
 }

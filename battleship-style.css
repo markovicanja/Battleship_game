@@ -100,7 +100,8 @@ td {
     margin-left: 5px;
 }
 .cover {
-    padding-bottom: 30%;
+    padding: 15%;
+    padding-top: 3%;
     position: absolute;
     top: 0;
     z-index: 10;
@@ -110,4 +111,7 @@ td {
 }
 .hidden {
     display: none;
+}
+.bg-metal {
+    background-image: url(./battleship-assets/images/metal.jpg);
 }
