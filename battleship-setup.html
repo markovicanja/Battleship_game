@@ -18,12 +18,70 @@
     <script src="battleship-script.js"></script>
 
 </head>
-<body onload="init()">
+<body onload="initSetup()">
 
-    <div class="container-fluid">
+    <div class="container-fluid mt-3">
         <div class="row text-center">
             <div class="offset-sm-1 col-sm-5">
-                <div id="cover1" class="fadeInDown">
+                <span id="label1">Player1, place your ships!</span>
+                <div id="cover1" class="fadeInDown hidden">
+                    <table>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                    </table>
                 </div>
                 <table id="table1">
                     <tr class="numeration-row">
@@ -191,7 +249,65 @@
             </div>
 
             <div class="col-sm-5">
+                <div id="label2">Player2, place your ships!</div>
                 <div id="cover2" class="fadeInDown">
+                    <table>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                            <td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td><td">&nbsp;</td>
+                        </tr>
+                    </table>
                 </div>
                 <table>
                     <tr class="numeration-row">

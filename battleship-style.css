@@ -72,7 +72,7 @@ table {
 table, tr, td {
     width: 90%;
     margin: auto;
-    margin-top: 2em;
+    margin-top: .5em;
     color: white;
     font-size: large;
     font-weight: 700;
@@ -100,12 +100,14 @@ td {
     margin-left: 5px;
 }
 .cover {
-    width: 35vw;
-    height: 35vw;
+    padding-bottom: 30%;
     position: absolute;
-    top: 5%;
+    top: 0;
     z-index: 10;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./battleship-assets/images/ocean.png);
     box-shadow: 1em 1em .5em black;
     border-radius: 10px;
+}
+.hidden {
+    display: none;
 }

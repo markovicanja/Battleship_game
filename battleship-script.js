@@ -92,11 +92,13 @@ function stopCounting(cell) {
     checkIfLastPlaced();
 }
 
-function init() {
+function initSetup() {
     ship1_length1 = 4, ship1_length2 = 3, ship1_length3 = 2, ship1_length4 = 1;
     ship2_length1 = 4, ship2_length2 = 3, ship2_length3 = 2, ship2_length4 = 1;
     currentPlayer = 1;
     coverTable(2);
+    $("#label1").html(localStorage.getItem("player1")+", place your ships!");
+    $("#label2").html(localStorage.getItem("player2")+", place your ships!");
 
     for(var i = 0; i < 10; i++) {
         table1Matrix[i] = [];
@@ -110,10 +112,12 @@ function init() {
 
 function coverTable(num) {
     $("#cover" + num).addClass("cover");
+    $("#cover"+ num).removeClass("hidden");
 }
 
 function uncoverTable(num) {
     $("#cover"+ num).removeClass("cover");
+    $("#cover"+ num).addClass("hidden");
 }
 
 function hasShipLength(length) {
@@ -252,4 +256,11 @@ function checkIfLastPlaced() {
             window.open("battleship-game.html", "_self");
         }
     }
+}
+
+/* Battleship Game */
+
+function initGame() {
+    $("#label1").html(localStorage.getItem("player1")+", play!");
+    $("#label2").html(localStorage.getItem("player2")+", play!");
 }
