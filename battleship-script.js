@@ -10,6 +10,10 @@ function startGame() {
         return;
     }
 
+    localStorage.clear();
+    localStorage.setItem("player1", player1);
+    localStorage.setItem("player2", player2);
+
     window.open("battleship-setup.html", "_self");
 }
 
@@ -19,6 +23,7 @@ var startingCell;
 var ship1_length1, ship1_length2, ship1_length3, ship1_length4;
 var ship2_length1, ship2_length2, ship2_length3, ship2_length4;
 var currentPlayer;
+var table1Matrix = [], table2Matrix = [];
 
 
 function startCounting(cell) {
@@ -37,16 +42,17 @@ function stopCounting(cell) {
             var end = parseInt(cell.charAt(2));
             var cellStr = startingCell.substr(0,2);
 
+            if (overlaps(startingCell, cell, currentPlayer==1? table1Matrix: table2Matrix)) {
+                alert("Overlap!");
+                return;
+            }
             if (!hasShipLength(length)) {
                 alert("No ships of length " + length + " left!");
                 return;
             }
-            if (overlaps()) {
-                alert("Overlap!");
-                return;
-            }
 
             for (i = start; i != end+di; i += di) {
+                setMatrix(currentPlayer==1? table1Matrix: table2Matrix, cellStr+i);
                 document.getElementById(cellStr+i).style="background-image: url(./battleship-assets/images/metal.jpg);";
             }
         }
@@ -59,17 +65,17 @@ function stopCounting(cell) {
             var tableNum = startingCell.substr(0,1);
             var rowNum = startingCell.substr(2,1);
 
+            if (overlaps(startingCell, cell, currentPlayer==1? table1Matrix: table2Matrix)) {
+                alert("Overlap!");
+                return;
+            }
             if (!hasShipLength(length)) {
                 alert("No ships of length " + length + " left!");
                 return;
             }
 
-            if (overlaps()) {
-                alert("Overlap!");
-                return;
-            }
-
             for (i = start; i != end+di; i += di) {
+                setMatrix(currentPlayer==1? table1Matrix: table2Matrix, tableNum + String.fromCharCode(i) + rowNum);
                 document.getElementById(tableNum + String.fromCharCode(i) + rowNum).style="background-image: url(./battleship-assets/images/metal.jpg);";
             }            
         }
@@ -82,6 +88,7 @@ function stopCounting(cell) {
         alert("Please select cell from your table!");
         return;
     }
+
     checkIfLastPlaced();
 }
 
@@ -89,23 +96,24 @@ function init() {
     ship1_length1 = 4, ship1_length2 = 3, ship1_length3 = 2, ship1_length4 = 1;
     ship2_length1 = 4, ship2_length2 = 3, ship2_length3 = 2, ship2_length4 = 1;
     currentPlayer = 1;
-    coverSecondTable();
+    coverTable(2);
+
+    for(var i = 0; i < 10; i++) {
+        table1Matrix[i] = [];
+        table2Matrix[i] = [];
+        for(var j = 0; j < 10; j++) {
+            table1Matrix[i][j] = 0;
+            table2Matrix[i][j] = 0;
+        }
+    }
 }
 
-function coverFirstTable() {
-    $("#cover1").addClass("cover");
+function coverTable(num) {
+    $("#cover" + num).addClass("cover");
 }
 
-function coverSecondTable() {
-    $("#cover2").addClass("cover");
-}
-
-function uncoverFirstTable() {
-    $("#cover1").removeClass("cover");
-}
-
-function uncoverSecondTable() {
-    $("#cover2").removeClass("cover");
+function uncoverTable(num) {
+    $("#cover"+ num).removeClass("cover");
 }
 
 function hasShipLength(length) {
@@ -193,20 +201,52 @@ function hasShipLength(length) {
     }
 }
 
-function overlaps() {
+function setMatrix(matrix, cell) {
+    var j = cell.charCodeAt(1) - 65;
+    var i = parseInt(cell.charAt(2));
 
+    matrix[i][j] = 2;
+    if (i-1>=0 && j-1>=0 && matrix[i-1][j-1]!=2) matrix[i-1][j-1] = 1;
+    if (i-1>=0 && matrix[i-1][j]!=2) matrix[i-1][j] = 1;
+    if (i-1>=0 && j+1<10 && matrix[i-1][j+1]!=2) matrix[i-1][j+1] = 1;
+    if (j-1>=0 && matrix[i][j-1]!=2) matrix[i][j-1] = 1;
+    if (j+1<10 && matrix[i][j+1]!=2) matrix[i][j+1] = 1;
+    if (i+1<10 && j-1>=0 && matrix[i+1][j-1]!=2) matrix[i+1][j-1] = 1;
+    if (i+1<10 && matrix[i+1][j]!=2) matrix[i+1][j] = 1;
+    if (i+1<10 && j+1<10 && matrix[i+1][j+1]!=2) matrix[i+1][j+1] = 1;      
+}
+
+function overlaps(start, end, matrix) {
+    var iStart = parseInt(start.charAt(2));
+    var jStart = start.charCodeAt(1) - 65;
+    var iEnd = parseInt(end.charAt(2));
+    var jEnd = end.charCodeAt(1) - 65;
+
+    if (jStart == jEnd) { // vertical
+        j = jStart;
+        for (i = iStart; i <= iEnd; i++) {
+            if (matrix[i][j] > 0) return true;
+        }
+    }
+    if (iStart == iEnd) { // horizontal
+        i = iStart;
+        for (j = jStart; j <= jEnd; j++) {
+            if (matrix[i][j] > 0) return true;
+        }
+    }
+    return false;
 }
 
 function checkIfLastPlaced() {
     if (currentPlayer == 1) {
-        if (ship1_length1 ==0 && ship1_length2 ==0 && ship1_length3 ==0 && ship1_length4 ==0) {
+        if (ship1_length1 == 0 && ship1_length2 == 0 && ship1_length3 == 0 && ship1_length4 == 0) {
             currentPlayer = 2;
-            uncoverSecondTable();
-            coverFirstTable();
+            uncoverTable(2);
+            coverTable(1);
         }
     }
     else if (currentPlayer == 2) {
-        if (ship2_length1 ==0 && ship2_length2 ==0 && ship2_length3 ==0 && ship2_length4 ==0) {
+        if (ship2_length1 == 0 && ship2_length2 == 0 && ship2_length3 == 0 && ship2_length4 == 0) {
             window.open("battleship-game.html", "_self");
         }
     }
