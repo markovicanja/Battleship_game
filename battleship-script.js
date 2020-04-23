@@ -29,12 +29,11 @@ function stopCounting(cell) {
             length = Math.abs(parseInt(startingCell.charAt(2)) - parseInt(cell.charAt(2))) + 1;
 
             var di = parseInt(startingCell.charAt(2)) <= parseInt(cell.charAt(2)) ? 1 : -1;
-            
             var start = parseInt(startingCell.charAt(2));
             var end = parseInt(cell.charAt(2));
             var cellStr = "" + startingCell.substr(0,2);
 
-            for (i = start; i <= end; i += di) {
+            for (i = start; i != end+di; i += di) {
                 document.getElementById(cellStr+i).style="background-image: url(./battleship-assets/images/metal.jpg);";
             }
         }
