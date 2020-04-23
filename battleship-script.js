@@ -308,11 +308,20 @@ function shoot(cell) {
         if (table2Matrix[i][j] == 2) {
             table4Matrix[i][j] = 2;
             $('#'+cell).addClass("bg-star");
+
+            cell = "2" + cell.substr(1,2);
+            $('#'+cell).removeClass("bg-metal");
+            $('#'+cell).addClass("bg-star");
+
             if (checkIfSunk(i, j, table2Matrix, table4Matrix)) shipSunk(i, j, table4Matrix, 4);
         }
         else {
             table4Matrix[i][j] == 1;
             $('#'+cell).addClass("bg-blue");
+
+            cell = "2" + cell.substr(1,2);
+            $('#'+cell).addClass("bg-blue");
+
             alert("Changing turn!");
             changeTurn();
         }
@@ -321,11 +330,20 @@ function shoot(cell) {
         if (table1Matrix[i][j] == 2) {
             table3Matrix[i][j] = 2;
             $('#'+cell).addClass("bg-star");
+
+            cell = "1" + cell.substr(1,2);
+            $('#'+cell).removeClass("bg-metal");
+            $('#'+cell).addClass("bg-star");
+
             if (checkIfSunk(i, j, table1Matrix, table3Matrix)) shipSunk(i, j, table3Matrix, 3);
         }
         else {
             table3Matrix[i][j] == 1;
             $('#'+cell).addClass("bg-blue");
+
+            cell = "1" + cell.substr(1,2);
+            $('#'+cell).addClass("bg-blue");
+
             alert("Changing turn!");
             changeTurn();
         }        
@@ -373,37 +391,66 @@ function shipSunk(i, j, matrix, num) {
     var cell = "#"+ num + String.fromCharCode(j + 65) + i;
     $(cell).removeClass("bg-star");
     $(cell).addClass("bg-sunk");
+
+    var cell1 = (num == 3 ? "#1" + cell.substr(2,2) : "#2" + cell.substr(2,2));
+    $(cell1).removeClass("bg-star");
+    $(cell1).addClass("bg-sunk");
+
     var length = 1;
     
     var m = i-1;
     while (m>=0 && matrix[m][j] == 2) {
         cell = "#"+ num + String.fromCharCode(j + 65) + m;
+        cell1 = (num == 3 ? "#1" + cell.substr(2,2) : "#2" + cell.substr(2,2));
+
         $(cell).removeClass("bg-star");
         $(cell).addClass("bg-sunk");
+
+        $(cell1).removeClass("bg-star");
+        $(cell1).addClass("bg-sunk");
+
         length++;
         m--;
     }
     m = i+1;
     while (m<10 && matrix[m][j] == 2) {
         cell = "#"+ num + String.fromCharCode(j + 65) + m;
+        cell1 = (num == 3 ? "#1" + cell.substr(2,2) : "#2" + cell.substr(2,2));
+        
         $(cell).removeClass("bg-star");
         $(cell).addClass("bg-sunk");
+
+        $(cell1).removeClass("bg-star");
+        $(cell1).addClass("bg-sunk");
+        
         length++;
         m++;
     }
     m=j-1;
     while (m>=0 && matrix[i][m] == 2) {
         cell = "#"+ num + String.fromCharCode(m + 65) + i;
+        cell1 = (num == 3 ? "#1" + cell.substr(2,2) : "#2" + cell.substr(2,2));
+
         $(cell).removeClass("bg-star");
         $(cell).addClass("bg-sunk");
+
+        $(cell1).removeClass("bg-star");
+        $(cell1).addClass("bg-sunk");
+
         length++;
         m--;
     }
     m=j+1;
     while (m<10 && matrix[i][m] == 2) {
         cell = "#"+ num + String.fromCharCode(m + 65) + i;
+        cell1 = (num == 3 ? "#1" + cell.substr(2,2) : "#2" + cell.substr(2,2));
+
         $(cell).removeClass("bg-star");
         $(cell).addClass("bg-sunk");
+
+        $(cell1).removeClass("bg-star");
+        $(cell1).addClass("bg-sunk");
+
         length++;
         m++;
     }
