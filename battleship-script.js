@@ -260,11 +260,13 @@ function checkIfLastPlaced() {
 
 /* Battleship Game */
 var table3Matrix = [], table4Matrix = [];
+var shipsLeft1, shipsLeft2;
 
 
 function initGame() {
     ship1_length1 = 4, ship1_length2 = 3, ship1_length3 = 2, ship1_length4 = 1;
     ship2_length1 = 4, ship2_length2 = 3, ship2_length3 = 2, ship2_length4 = 1;
+    shipsLeft1 = 10, shipsLeft2 = 10;
 
     $("#label1").html(localStorage.getItem("player1")+"'s board!");
     $("#label2").html(localStorage.getItem("player2")+"'s board!");
@@ -371,12 +373,14 @@ function shipSunk(i, j, matrix, num) {
     var cell = "#"+ num + String.fromCharCode(j + 65) + i;
     $(cell).removeClass("bg-star");
     $(cell).addClass("bg-sunk");
+    var length = 1;
     
     var m = i-1;
     while (m>=0 && matrix[m][j] == 2) {
         cell = "#"+ num + String.fromCharCode(j + 65) + m;
         $(cell).removeClass("bg-star");
         $(cell).addClass("bg-sunk");
+        length++;
         m--;
     }
     m = i+1;
@@ -384,6 +388,7 @@ function shipSunk(i, j, matrix, num) {
         cell = "#"+ num + String.fromCharCode(j + 65) + m;
         $(cell).removeClass("bg-star");
         $(cell).addClass("bg-sunk");
+        length++;
         m++;
     }
     m=j-1;
@@ -391,6 +396,7 @@ function shipSunk(i, j, matrix, num) {
         cell = "#"+ num + String.fromCharCode(m + 65) + i;
         $(cell).removeClass("bg-star");
         $(cell).addClass("bg-sunk");
+        length++;
         m--;
     }
     m=j+1;
@@ -398,6 +404,35 @@ function shipSunk(i, j, matrix, num) {
         cell = "#"+ num + String.fromCharCode(m + 65) + i;
         $(cell).removeClass("bg-star");
         $(cell).addClass("bg-sunk");
+        length++;
         m++;
+    }
+    updateNumberOfShips(num, length);
+}
+
+function updateNumberOfShips(num, length) {
+    if (num == 3) {
+        switch(length) {
+            case 1: ship1_length1--; shipsLeft1--; break;
+            case 2: ship1_length2--; shipsLeft1--; break;
+            case 3: ship1_length3--; shipsLeft1--; break;
+            case 4: ship1_length4--; shipsLeft1--; break;
+        }
+        if (shipsLeft1 == 0) {
+            alert(localStorage.getItem('player2') + " won! " + shipsLeft2 + " ships left!");
+            window.open("battleship-welcome.html", "_self");
+        }
+    }
+    if (num == 4) {
+        switch(length) {
+            case 1: ship2_length1--; shipsLeft2--; break;
+            case 2: ship2_length2--; shipsLeft2--; break;
+            case 3: ship2_length3--; shipsLeft2--; break;
+            case 4: ship2_length4--; shipsLeft2--; break;
+        }
+        if (shipsLeft2 == 0) {
+            alert(localStorage.getItem('player1') + " won! " + shipsLeft1 + " ships left!");
+            window.open("battleship-welcome.html", "_self");
+        }
     }
 }
