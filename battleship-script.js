@@ -47,7 +47,7 @@ function stopCounting(cell) {
             var rowNum = startingCell.substr(2,1);
 
             for (i = start; i != end+di; i += di) {
-                document.getElementById(tableNum+String.fromCharCode(i)+rowNum).style="background-image: url(./battleship-assets/images/metal.jpg);";
+                document.getElementById(tableNum + String.fromCharCode(i) + rowNum).style="background-image: url(./battleship-assets/images/metal.jpg);";
             }            
         }
         else {
@@ -59,4 +59,12 @@ function stopCounting(cell) {
         alert("Please select cell from your table!");
         return;
     }
+}
+
+function coverFirstTable() {
+    $("#cover1").addClass("cover");
+}
+
+function coverSecondTable() {
+    $("#cover2").addClass("cover");
 }

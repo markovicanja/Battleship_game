@@ -11,16 +11,21 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
     <link rel="stylesheet" href="battleship-style.css">
     <script src="battleship-script.js"></script>
 
 </head>
-<body>
+<body onload="coverSecondTable()">
 
     <div class="container-fluid">
         <div class="row text-center">
-            <div class="offset-sm-1 col-lg-5 col-sm-10">
-                <table>
+            <div class="offset-sm-1 col-sm-5">
+                <div id="cover1" class="fadeInDown">
+                </div>
+                <table id="table1">
                     <tr class="numeration-row">
                         <td>&nbsp;</td>
                         <td>A</td>
@@ -185,7 +190,9 @@
                
             </div>
 
-            <div class="offset-sm-1 offset-lg-0 col-lg-5 col-sm-10">
+            <div class="col-sm-5">
+                <div id="cover2" class="fadeInDown">
+                </div>
                 <table>
                     <tr class="numeration-row">
                         <td>&nbsp;</td>
@@ -329,7 +336,7 @@
                         <td id="2I9" onmousedown="startCounting('2I9')" onmouseup="stopCounting('2I9')">&nbsp;</td>
                         <td id="2J9" onmousedown="startCounting('2J9')" onmouseup="stopCounting('2J9')">&nbsp;</td>
                     </tr>
-                </table>
+                </table>           
 
                 <div class="ship-text">
                     <i class="fas fa-anchor"></i>

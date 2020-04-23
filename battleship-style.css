@@ -65,6 +65,10 @@ input[type=text] {
 }
 
 /* Setup page */
+table {
+    width: 30vw !important;
+    height: 30vw !important;
+}
 table, tr, td {
     width: 90%;
     margin: auto;
@@ -75,8 +79,8 @@ table, tr, td {
     border-collapse: collapse;
 }
 td {
-    width: 15px;
-    height: 45px;
+    width: 3vw;
+    height: 3vw;
     padding: 0;    
     border: 2px solid white;
 }
@@ -94,4 +98,14 @@ td {
     color: white;
     font-size: 1em;
     margin-left: 5px;
+}
+.cover {
+    width: 35vw;
+    height: 35vw;
+    position: absolute;
+    top: 5%;
+    z-index: 10;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./battleship-assets/images/ocean.png);
+    box-shadow: 1em 1em .5em black;
+    border-radius: 10px;
 }
