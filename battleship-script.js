@@ -259,6 +259,8 @@ function checkIfLastPlaced() {
 }
 
 /* Battleship Game */
+var table3Matrix = [], table4Matrix = [];
+
 
 function initGame() {
     $("#label1").html(localStorage.getItem("player1")+"'s board!");
@@ -267,6 +269,18 @@ function initGame() {
     $("#label4").html(localStorage.getItem("player2")+"'s board!");
     addShips(1); addShips(2);
     coverTable(2);
+    currentPlayer = 1;
+    table1Matrix = JSON.parse(localStorage.getItem("table1"));
+    table2Matrix = JSON.parse(localStorage.getItem("table2"));
+
+    for(var i = 0; i < 10; i++) {
+        table3Matrix[i] = [];
+        table4Matrix[i] = [];
+        for(var j = 0; j < 10; j++) {
+            table3Matrix[i][j] = 0;
+            table4Matrix[i][j] = 0;
+        }
+    }
 }
 
 function addShips(num) {
@@ -280,6 +294,45 @@ function addShips(num) {
             } 
 }
 
-function shoot(cell) {
+function shoot(cell) {    
+    var i = parseInt(cell.charAt(2));
+    var j = cell.charCodeAt(1) - 65;
     
+    if (currentPlayer == 1) {
+        if (table2Matrix[i][j] == 2) {
+            table4Matrix[i][j] == 2;
+            $('#'+cell).addClass("bg-star");
+        }
+        else {
+            table4Matrix[i][j] == 1;
+            $('#'+cell).addClass("bg-blue");
+            alert("Changing turn!");
+            changeTurn();
+        }
+    }
+    else if (currentPlayer == 2) {
+        if (table1Matrix[i][j] == 2) {
+            table3Matrix[i][j] == 2;
+            $('#'+cell).addClass("bg-star");
+        }
+        else {
+            table3Matrix[i][j] == 1;
+            $('#'+cell).addClass("bg-blue");
+            alert("Changing turn!");
+            changeTurn();
+        }        
+    }
+}
+
+function changeTurn() {
+    if (currentPlayer == 1) {
+        currentPlayer = 2;
+        coverTable(1);
+        uncoverTable(2);
+    }
+    else {
+        currentPlayer = 1;
+        coverTable(2);
+        uncoverTable(1);
+    }
 }

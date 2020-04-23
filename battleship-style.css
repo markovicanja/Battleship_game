@@ -112,6 +112,20 @@ td {
 .hidden {
     display: none;
 }
+
+/* Game page */
 .bg-metal {
     background-image: url(./battleship-assets/images/metal.jpg);
+}
+.bg-sunk {
+    background: linear-gradient(rgba(170, 0, 0, 0.5), rgba(170, 0, 0, 0.5)), url(./battleship-assets/images/star.png);
+    background-size: cover;
+}
+.bg-star {
+    background-image: url(./battleship-assets/images/star.png);
+    background-size: cover;
+}
+.bg-blue {
+    background: linear-gradient(rgba(0, 162, 255, 0.3), rgba(0, 162, 255, 0.3)), url(./battleship-assets/images/ocean.png);
+    background-size: cover;
 }
