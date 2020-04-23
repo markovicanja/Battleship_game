@@ -28,7 +28,7 @@ function stopCounting(cell) {
         if (startingCell.charAt(1) == cell.charAt(1)) { // same column
             length = Math.abs(parseInt(startingCell.charAt(2)) - parseInt(cell.charAt(2))) + 1;
 
-            var di = parseInt(startingCell.charAt(2)) < parseInt(cell.charAt(2)) ? 1 : -1;
+            var di = parseInt(startingCell.charAt(2)) <= parseInt(cell.charAt(2)) ? 1 : -1;
             
             var start = parseInt(startingCell.charAt(2));
             var end = parseInt(cell.charAt(2));
