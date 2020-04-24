@@ -226,6 +226,17 @@ function overlaps(start, end, matrix) {
     var iEnd = parseInt(end.charAt(2));
     var jEnd = end.charCodeAt(1) - 65;
 
+    if (iStart > iEnd) {
+        var tmp = iStart;
+        iStart = iEnd;
+        iEnd = tmp;
+    }
+    if (jStart > jEnd) {
+        var tmp = jStart;
+        jStart = jEnd;
+        jEnd = tmp;
+    }
+
     if (jStart == jEnd) { // vertical
         j = jStart;
         for (i = iStart; i <= iEnd; i++) {

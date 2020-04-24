@@ -69,6 +69,8 @@ table {
     width: 30vw !important;
     height: 30vw !important;
     cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 table, tr, td {
     width: 90%;
