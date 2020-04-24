@@ -68,6 +68,7 @@ input[type=text] {
 table {
     width: 30vw !important;
     height: 30vw !important;
+    cursor: pointer;
 }
 table, tr, td {
     width: 90%;
