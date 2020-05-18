@@ -1,5 +1,3 @@
 # Battleship_game
-Simple Battleship game with
- - `HTML`
- - `CSS`
- - `JavaScript`
+Simple Battleship game for two players.
+School project for the Web Design course.
